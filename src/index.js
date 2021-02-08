@@ -1,19 +1,10 @@
-const express = require('express')
-const app = express()
+import "@babel/polyfill";
+import app from './app'
 
-// SETTINGS
-app.set('port', process.env.PORT || 3000)
+function main(){
+  app.listen(app.get('port'), () => {
+    console.log('Servidor funcionando en el puerto' + app.get('port') );
+  });
+}
 
-// MIDDLEWARES
-
-// ROUTES
-app.use('/posts', require('./Routes/Pots'))
-
-// HANDDLER DEFAULT
-app.use((req, res) => {
-  res.send('404 NOT FOUND')
-})
-// SERVER LISTENING
-app.listen(app.get('port'), () => {
-  console.log(`SERVER ON PORT ${app.get('port')}`)
-})
+main()
