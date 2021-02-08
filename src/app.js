@@ -3,18 +3,18 @@ import morgan from 'morgan'
 
 const app = express()
 
-
 //settings
 app.set('port', process.env.PORT || 3000)
-app.use(json())
-app.use(urlencoded({extended:false}))
+
+// middlewares
 app.use(morgan('dev'))
+app.use(urlencoded({ extended: false }))
+app.use(json())
 
 //importing routes
 import IndexRoutes from './routes/index'
 import UserRoutes from './routes/user'
 import PublicationRoutes from './routes/publication'
-
 
 //routes
 app.use(IndexRoutes)

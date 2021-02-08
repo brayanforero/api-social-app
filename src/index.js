@@ -1,10 +1,10 @@
-import "@babel/polyfill";
+import '@babel/polyfill'
 import app from './app'
 
-function main(){
+function main() {
   app.listen(app.get('port'), () => {
-    console.log('Servidor funcionando en el puerto' + app.get('port') );
-  });
+    console.log('SERVER ON PORT ' + app.get('port'))
+  })
 }
 
 main()
