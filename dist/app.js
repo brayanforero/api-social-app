@@ -36,6 +36,10 @@ app.use((0, _express.json)()); //importing routes
 //routes
 app.use(_index["default"]);
 app.use('/user', _user["default"]);
-app.use('/publication', _publication["default"]);
+app.use('/publication', _publication["default"]); // handdler 404
+
+app.use(function (req, res) {
+  res.send('404 NOT FOUND');
+});
 var _default = app;
 exports["default"] = _default;

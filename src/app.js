@@ -21,4 +21,10 @@ app.use(IndexRoutes)
 app.use('/user', UserRoutes)
 app.use('/publication', PublicationRoutes)
 
+// handdler 404
+
+app.use((req, res) => {
+  res.send('404 NOT FOUND')
+})
+
 export default app
