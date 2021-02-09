@@ -8,7 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function main() {
   _app["default"].listen(_app["default"].get('port'), function () {
-    console.log('Servidor funcionando en el puerto' + _app["default"].get('port'));
+    console.log('SERVER ON PORT ' + _app["default"].get('port'));
   });
 }
 

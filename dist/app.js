@@ -25,12 +25,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var app = (0, _express["default"])(); //settings
 
-app.set('port', process.env.PORT || 3000);
-app.use((0, _express.json)());
+app.set('port', process.env.PORT || 3000); // middlewares
+
+app.use((0, _morgan["default"])('dev'));
 app.use((0, _express.urlencoded)({
   extended: false
 }));
-app.use((0, _morgan["default"])('dev')); //importing routes
+app.use((0, _express.json)()); //importing routes
 
 //routes
 app.use(_index["default"]);
