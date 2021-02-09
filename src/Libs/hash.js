@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs')
+import bcrypt from 'bcryptjs'
 
 const hashing = str => {
   const salt = bcrypt.genSaltSync(10)

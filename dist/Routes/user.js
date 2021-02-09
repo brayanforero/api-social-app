@@ -7,11 +7,10 @@ exports["default"] = void 0;
 
 var _express = require("express");
 
+var _UserController = require("../Controllers/UserController");
+
 var router = (0, _express.Router)();
-router.get('/', function (req, res) {
-  res.json({
-    hola: 'mundo from user route'
-  });
-});
+router.get('/', _UserController.index);
+router.post('/', _UserController.store);
 var _default = router;
 exports["default"] = _default;
